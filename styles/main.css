@@ -3,7 +3,7 @@
   --light-gray: rgb(96, 96, 96);
   --dark-gray: rgb(34, 34, 34);
   --white-color: rgb(230, 230, 230);
-  --form-focus: rgba(30, 30, 30, 0.2);
+  --form-focus: rgba(54, 54, 54, 0.3);
   --outline: rgb(0, 123, 255);
 }
 
@@ -50,16 +50,10 @@ body {
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 .page-header__item--done {
   background-color: var(--light-gray);
-}
-
-.main-content__input-bar {
-  display: flex;
-  min-width: 50px;
-  margin-bottom: 3rem;
 }
 
 .visually-hidden {
@@ -92,11 +86,20 @@ button {
   outline: none;
 }
 
+.main-content__input-bar {
+  display: flex;
+  align-items: end;
+  min-width: 50px;
+  min-height: 55px;
+  margin-bottom: 3rem;
+}
+
 #task-input {
   background: transparent;
+  padding: 1em;
+  padding-left: 10px;
   border: none;
   border-bottom: 2px solid var(--white-color);
-  height: 55px;
   color: var(--white-color);
   outline: none;
   flex-grow: 1;
@@ -104,7 +107,7 @@ button {
 
 #task-input:focus-visible,
 #task-input:focus {
-  background-color: var(--form-focus);
+  background: linear-gradient(90deg, var(--form-focus) 0%, var(--bg-color) 70%);
 }
 
 .main-content__add-task-button {
@@ -170,20 +173,15 @@ button {
   border-color: var(--white-color);
   border-radius: 30%;
   border: 1px solid #ffffff;
-  
 }
 
 .main-content__task-checkbox:checked {
-    background-color: var(--white-color); 
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-    background-size: 16px 16px; 
-    background-position: center;
-    background-repeat: no-repeat;
-    
+  background-color: var(--white-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-
-
 
 .main-content__task-label {
   width: 90%;
