@@ -1,9 +1,9 @@
 # 📝 Todo List - Smart Task Manager
-
 [![WIP](https://img.shields.io/badge/status-in%20development-orange)](https://github.com/your-username/todo-list)
-⚠️ **Project in active development functionality may change, bugs are possible**
 
 A simple and elegant task manager built with vanilla JavaScript, HTML, and CSS. Minimalist design focused on user experience.
+
+⚠️ **Project in active development functionality may change, bugs are possible**
 
 ## ✨ Features
 ✅ Add and delete tasks
