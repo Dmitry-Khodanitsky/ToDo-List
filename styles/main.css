@@ -1,0 +1,200 @@
+:root {
+  --bg-color: rgb(17, 17, 17);
+  --light-gray: rgb(96, 96, 96);
+  --dark-gray: rgb(34, 34, 34);
+  --white-color: rgb(230, 230, 230);
+  --form-focus: rgba(30, 30, 30, 0.2);
+  --outline: rgb(0, 123, 255);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центр по вертикали */
+  align-items: center; /* Центр по горизонтали */
+  min-height: 100vh; /* Минимальная высота = высоте экрана */
+  background-color: var(--bg-color);
+  color: var(--white-color);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.page-header__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.page-header__status-bar {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.page-header__item {
+  display: flex;
+  background-color: var(--dark-gray);
+  width: 9em;
+  height: 2em;
+  margin-right: 13px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header__item--visible {
+  display: flex;
+}
+
+.hidden {
+    display: none;
+}
+.page-header__item--done {
+  background-color: var(--light-gray);
+}
+
+.main-content__input-bar {
+  display: flex;
+  min-width: 50px;
+  margin-bottom: 3rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page-header__icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' fill='none'%3E%3Crect x='0.5' y='0.5' width='10' height='10' rx='5' stroke='%23E6E6E6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 11px;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+}
+
+.page-header__icon--done {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' fill='none'%3E%3Cpath d='M7.38101 4.14991C7.22801 3.99691 6.97601 3.99691 6.82301 4.14991L4.96451 6.00841L4.17701 5.22091C4.02401 5.06791 3.77201 5.06791 3.61901 5.22091C3.46601 5.37391 3.46601 5.62141 3.61901 5.77891L4.69001 6.84541C4.76651 6.92191 4.86551 6.95791 4.96451 6.95791C5.06801 6.95791 5.16701 6.92191 5.24351 6.84541L7.38101 4.70791C7.53401 4.55491 7.53401 4.30741 7.38101 4.14991Z' fill='%23FBFBFB'/%3E%3Crect x='0.5' y='0.5' width='10' height='10' rx='5' stroke='%23E6E6E6'/%3E%3C/svg%3E");
+}
+
+input,
+button {
+  outline: none;
+}
+
+#task-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--white-color);
+  height: 55px;
+  color: var(--white-color);
+  outline: none;
+  flex-grow: 1;
+}
+
+#task-input:focus-visible,
+#task-input:focus {
+  background-color: var(--form-focus);
+}
+
+.main-content__add-task-button {
+  width: 55px;
+  height: 55px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='rgb(230, 230, 230)'/%3E%3Cpath d='M12.5 0C13.8807 0 15 1.11929 15 2.5V10H22.5C23.8807 10 25 11.1193 25 12.5C25 13.8807 23.8807 15 22.5 15H15V22.5C15 23.8807 13.8807 25 12.5 25C11.1193 25 10 23.8807 10 22.5V15H2.5C1.11929 15 0 13.8807 0 12.5C0 11.1193 1.11929 10 2.5 10H10V2.5C10 1.11929 11.1193 0 12.5 0Z' fill='%23111'/%3E%3C/svg%3E");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.main-content__add-task-button:hover {
+  transform: rotate(90deg) scale(0.95);
+}
+
+.main-content__add-task-button:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+.main-content__add-task-button:focus-visible {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+.main-content__list-icon {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.main-content__title {
+  text-align: center;
+  color: var(--light-gray);
+  font-size: 1.5rem;
+}
+
+.main-content__task-element {
+  width: 100%;
+  min-height: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid var(--white-color);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+}
+.main-content__checkbox-wrapper {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.main-content__task-checkbox {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-color: var(--white-color);
+  border-radius: 30%;
+  border: 1px solid #ffffff;
+  
+}
+
+.main-content__task-checkbox:checked {
+    background-color: var(--white-color); 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: 16px 16px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+
+.main-content__task-label {
+  width: 90%;
+  align-self: center;
+  margin-right: 10px;
+  overflow-wrap: break-word;
+}
+
+.main-content__task-delete {
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  background-color: var(--white-color);
+}
