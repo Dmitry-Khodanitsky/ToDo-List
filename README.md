@@ -36,7 +36,7 @@ bash
 git clone https://github.com/Dmitry-Khodanitsky/ToDo-List.git
 Open index.html in your browser
 
-Or just open the demo
+Or just open the [demo](https://dmitry-khodanitsky.github.io/ToDo-List/)
 
 
 ## 🎯 Project Goals
