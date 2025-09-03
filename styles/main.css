@@ -94,7 +94,7 @@ button {
   margin-bottom: 3rem;
 }
 
-#task-input {
+.main-content__task-input {
   background: transparent;
   padding: 1em;
   padding-left: 10px;
