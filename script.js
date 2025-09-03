@@ -53,10 +53,8 @@ addTaskButton.addEventListener('click', (event) => {
   const input = document.querySelector('#task-input')
   const inputData = input.value.trim()
   input.value = ''
-  console.log('Переданный текст: ', inputData)
 
   if (inputData.length > 0) {
-    console.log(countOfActive)
     if (countOfActive === 0) {
       ;[...tasksContainer.children].forEach((child) => {
         child.classList.add('hidden')
