@@ -5,12 +5,12 @@ function sanitizeHTML(text) {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#039;',
+    '\'': '&#039;',
   }
-  return text.replace(/[&<>"']/g, (char) => symbolReplacements[char])
+  return text.replace(/[&<>"']/g, char => symbolReplacements[char])
 }
 
-//Создание елемента с задачей
+// Создание елемента с задачей
 function createTask(inputValue) {
   const safeInputValue = sanitizeHTML(inputValue)
   const taskElement = document.createElement('div')
@@ -56,7 +56,7 @@ addTaskButton.addEventListener('click', (event) => {
 
   if (inputData.length > 0) {
     if (countOfActive === 0) {
-      ;[...tasksContainer.children].forEach((child) => {
+      [...tasksContainer.children].forEach((child) => {
         child.classList.add('hidden')
       })
       statusBar.classList.remove('hidden')
@@ -64,10 +64,10 @@ addTaskButton.addEventListener('click', (event) => {
 
     countOfActive += 1
     const activeCountText = activeTasksLabel.querySelector(
-      '.page-header__text--active'
+      '.page-header__text--active',
     )
     const doneCountText = doneTasksLabel.querySelector(
-      '.page-header__text--done'
+      '.page-header__text--done',
     )
     activeCountText.textContent = `${countOfActive} активных`
     doneCountText.textContent = `${countOfDone} выполнено`
