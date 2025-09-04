@@ -32,8 +32,13 @@
           <label for="task-input" class="visually-hidden">
             Добавить новую задачу</label
           >
-          <textarea id="task-input" class="main-content__task-input" rows="1" placeholder="Добавьте новую задачу..."
-            wrap="hard" required
+          <textarea
+            id="task-input"
+            class="main-content__task-input"
+            rows="1"
+            placeholder="Добавьте новую задачу..."
+            wrap="hard"
+            required
           >
           </textarea>
 
@@ -44,17 +49,21 @@
             id="add-task"
           ></button>
         </form>
-        <section class="main-content__tasks-container">
-          <img
-            src="assets/icons/list.svg"
-            alt="У вас еще нет задача"
-            class="main-content__list-icon"
-          />
-          <h3 class="main-content__title">
+        <ul class="main-content__tasks-container">
+          <li class="main-content__list-icon">
+            <img
+              src="assets/icons/list.svg"
+              alt="У вас еще нет задача"
+            />
+          </li>
+          <li class="main-content__title">
+             <h3>
             Задач пока нет <br />
             Добавьте свою первую задачу!
           </h3>
-        </section>
+          </li>
+         
+        </ul>
       </main>
     </div>
     <script src="script.js"></script>
