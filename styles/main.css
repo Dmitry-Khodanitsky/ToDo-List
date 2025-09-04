@@ -138,8 +138,11 @@ button {
 }
 
 .main-content__list-icon {
-  margin: 0 auto;
   margin-bottom: 3rem;
+}
+
+.main-content__list-icon > img {
+  margin: 0 auto;
 }
 
 .main-content__title {
@@ -157,7 +160,7 @@ button {
   border: 1px solid var(--white-color);
   border-radius: 20px;
   padding: 20px;
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .main-content__checkbox-wrapper {
   width: 24px;
