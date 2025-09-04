@@ -51,6 +51,7 @@ function renderTasks() {
   state.tasks.forEach((task) => {
     tasksContainer.appendChild(createTask(task.content))
   })
+  statusBar.classList.remove('hidden')
 }
 
 const tasksContainer = document.querySelector('.main-content__tasks-container')
