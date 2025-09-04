@@ -74,7 +74,7 @@ addTaskButton.addEventListener('click', (event) => {
   input.value = ''
 
   if (inputData.length > 0) {
-    if (countOfActive === 0) {
+    if (state.countOfActive === 0) {
       [...tasksContainer.children].forEach((child) => {
         child.classList.add('hidden')
       })
