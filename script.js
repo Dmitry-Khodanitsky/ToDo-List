@@ -10,6 +10,14 @@ function sanitizeHTML(text) {
   return text.replace(/[&<>"']/g, char => symbolReplacements[char])
 }
 
+// состояние приложения
+const state = {
+  tasksCount: 0,
+  countOfActive: 0,
+  countOfDone: 0,
+  tasks: [],
+}
+
 // Создание елемента с задачей
 function createTask(inputValue) {
   const safeInputValue = sanitizeHTML(inputValue)
