@@ -19,8 +19,7 @@ const state = {
 }
 
 // Создание елемента с задачей
-function createTask(inputValue) {
-  const safeInputValue = sanitizeHTML(inputValue)
+function createTask(content) {
   const taskElement = document.createElement('li')
   taskElement.classList.add('main-content__task-element')
 
@@ -34,7 +33,7 @@ function createTask(inputValue) {
               />
             </div>
             <label for="done" class="main-content__task-label">
-            ${safeInputValue}
+            ${content}
             </label>
             <div class="main-content__delete-button-wrapper">
               <button
