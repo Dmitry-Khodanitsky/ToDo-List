@@ -45,6 +45,7 @@ function createTask(content) {
   taskElement.innerHTML = innerDiv
   return taskElement
 }
+
 // функция рендера элементов
 function renderTasks() {
   tasksContainer.innerHTML = ''
@@ -59,8 +60,6 @@ const addTaskButton = document.querySelector('#add-task')
 const statusBar = document.querySelector('.page-header__status-bar')
 const activeTasksLabel = document.querySelector('.page-header__item--active')
 const doneTasksLabel = document.querySelector('.page-header__item--done')
-let countOfActive = Number(activeTasksLabel.dataset.count)
-let countOfDone = Number(doneTasksLabel.dataset.count)
 
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
@@ -70,9 +69,10 @@ addTaskButton.addEventListener('click', (event) => {
 
   const input = document.querySelector('#task-input')
   const inputData = input.value.trim()
+
   if (inputData != '') {
-  const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
-  state.tasks.unshift(taskObject) // обновляем состояние
+    const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
+    state.tasks.unshift(taskObject) // обновляем состояние
   }
   input.value = ''
 
@@ -81,10 +81,7 @@ addTaskButton.addEventListener('click', (event) => {
       [...tasksContainer.children].forEach((child) => {
         child.classList.add('hidden')
       })
-      statusBar.classList.remove('hidden')
     }
-
-    countOfActive += 1
     const activeCountText = activeTasksLabel.querySelector(
       '.page-header__text--active',
     )
@@ -93,5 +90,7 @@ addTaskButton.addEventListener('click', (event) => {
     )
     activeCountText.textContent = `${state.countOfActive} активных`
     doneCountText.textContent = `${state.countOfDone} выполнено`
+
+    renderTasks()
   }
 })
