@@ -64,6 +64,8 @@ let countOfDone = Number(doneTasksLabel.dataset.count)
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
   event.preventDefault()
+  state.tasksCount += 1
+  state.countOfActive += 1
 
   const input = document.querySelector('#task-input')
   const inputData = input.value.trim()
