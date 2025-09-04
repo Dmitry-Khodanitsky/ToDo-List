@@ -13,7 +13,7 @@ function sanitizeHTML(text) {
 // Создание елемента с задачей
 function createTask(inputValue) {
   const safeInputValue = sanitizeHTML(inputValue)
-  const taskElement = document.createElement('div')
+  const taskElement = document.createElement('li')
   taskElement.classList.add('main-content__task-element')
 
   const innerDiv = `
@@ -50,6 +50,7 @@ let countOfDone = Number(doneTasksLabel.dataset.count)
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
   event.preventDefault()
+
   const input = document.querySelector('#task-input')
   const inputData = input.value.trim()
   input.value = ''
