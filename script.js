@@ -91,8 +91,7 @@ addTaskButton.addEventListener('click', (event) => {
     const doneCountText = doneTasksLabel.querySelector(
       '.page-header__text--done',
     )
-    activeCountText.textContent = `${countOfActive} активных`
-    doneCountText.textContent = `${countOfDone} выполнено`
-    tasksContainer.prepend(createTask(inputData))
+    activeCountText.textContent = `${state.countOfActive} активных`
+    doneCountText.textContent = `${state.countOfDone} выполнено`
   }
 })
