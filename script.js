@@ -70,8 +70,10 @@ addTaskButton.addEventListener('click', (event) => {
 
   const input = document.querySelector('#task-input')
   const inputData = input.value.trim()
+  if (inputData != '') {
   const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
   state.tasks.unshift(taskObject) // обновляем состояние
+  }
   input.value = ''
 
   if (inputData.length > 0) {
