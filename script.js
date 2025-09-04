@@ -46,6 +46,13 @@ function createTask(inputValue) {
   taskElement.innerHTML = innerDiv
   return taskElement
 }
+// функция рендера элементов
+function renderTasks() {
+  tasksContainer.innerHTML = ''
+  state.tasks.forEach((task) => {
+    tasksContainer.appendChild(createTask(task.content))
+  })
+}
 
 const tasksContainer = document.querySelector('.main-content__tasks-container')
 const addTaskButton = document.querySelector('#add-task')
