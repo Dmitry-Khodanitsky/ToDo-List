@@ -202,3 +202,29 @@ button {
   align-self: center;
   background-color: var(--white-color);
 }
+
+.input-error {
+  animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  50% {
+    transform: translateX(-5px);
+    border-color: var(--error);
+  }
+  30%,
+  70% {
+    transform: translateX(5px);
+    border-color: var(--error)
+  }
+}
+.input-error::placeholder {
+  animation: inherit; /* унаследованная анимация */
+  animation-duration: 0.7s;
+  
+}
