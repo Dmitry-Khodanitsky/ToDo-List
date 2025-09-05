@@ -96,7 +96,10 @@ addTaskButton.addEventListener('click', (event) => {
 
   const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
   state.tasks.unshift(taskObject) // обновляем состояние
-  input.value = ''
+  state.tasksCount += 1
+  state.countOfActive += 1
+
+  input.value = '' // опиимизировать в функцию
 
   if (inputData.length > 0) {
     if (state.countOfActive === 0) {
