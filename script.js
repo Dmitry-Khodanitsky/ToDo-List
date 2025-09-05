@@ -84,7 +84,15 @@ addTaskButton.addEventListener('click', (event) => {
   state.countOfActive += 1
   const inputData = input.value.trim()
 
-  if (inputData === '') return
+  if (inputData === '') {
+    input.classList.add('input-error')
+    setTimeout(() => {
+      input.classList.remove('input-error')
+    }, 700)
+    input.focus() // опиимизировать в функцию
+    input.value = ''
+    return
+  }
 
   const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
   state.tasks.unshift(taskObject) // обновляем состояние
