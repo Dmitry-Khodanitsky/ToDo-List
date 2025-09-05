@@ -69,6 +69,8 @@ const statusBar = document.querySelector('.page-header__status-bar')
 const activeTasksLabel = document.querySelector('.page-header__item--active')
 const doneTasksLabel = document.querySelector('.page-header__item--done')
 const input = document.querySelector('#task-input')
+input.value = ''
+input.focus()
 
 // Событие textarea при вводе input
 input.addEventListener('input', () => {
