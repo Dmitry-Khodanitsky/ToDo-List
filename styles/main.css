@@ -103,6 +103,8 @@ button {
   color: var(--white-color);
   outline: none;
   flex-grow: 1;
+  resize: none;
+  overflow-y: hidden;
 }
 
 #task-input:focus-visible,
