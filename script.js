@@ -105,6 +105,7 @@ addTaskButton.addEventListener('click', (event) => {
     activeCountText.textContent = `${state.countOfActive} активных`
     doneCountText.textContent = `${state.countOfDone} выполнено`
 
+    input.style.height = 'auto'
     renderTasks()
   }
 })
