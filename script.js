@@ -70,6 +70,11 @@ const activeTasksLabel = document.querySelector('.page-header__item--active')
 const doneTasksLabel = document.querySelector('.page-header__item--done')
 const input = document.querySelector('#task-input')
 
+// Событие textarea при вводе input
+input.addEventListener('input', () => {
+  autoResize(input)
+})
+
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
   event.preventDefault()
