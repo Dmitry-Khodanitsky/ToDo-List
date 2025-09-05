@@ -60,6 +60,7 @@ const addTaskButton = document.querySelector('#add-task')
 const statusBar = document.querySelector('.page-header__status-bar')
 const activeTasksLabel = document.querySelector('.page-header__item--active')
 const doneTasksLabel = document.querySelector('.page-header__item--done')
+const input = document.querySelector('#task-input')
 
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
