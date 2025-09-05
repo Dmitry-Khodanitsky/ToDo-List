@@ -55,6 +55,14 @@ function renderTasks() {
   statusBar.classList.remove('hidden')
 }
 
+// автоматическое увеличение textarea в зависимости от размера контента
+function autoResize(textarea) {
+  // Сбрасываем высоты
+  textarea.style.height = 'auto'
+  // Устанавливаем новую высоту на основе scrollHeight
+  textarea.style.height = textarea.scrollHeight + 'px'
+}
+
 const tasksContainer = document.querySelector('.main-content__tasks-container')
 const addTaskButton = document.querySelector('#add-task')
 const statusBar = document.querySelector('.page-header__status-bar')
