@@ -47,7 +47,7 @@ function createTask(content) {
             <div class="main-content__delete-button-wrapper">
               <button
                 aria-label="Удалить задачу"
-                class="main-content__task-delete"
+                class="main-content__task-delete-icon"
               ></button>
             </div>`
 
