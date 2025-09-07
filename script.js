@@ -1,3 +1,4 @@
+// helpers
 // Экранирование символов
 function sanitizeHTML(text) {
   const symbolReplacements = {
@@ -8,6 +9,14 @@ function sanitizeHTML(text) {
     '\'': '&#039;',
   }
   return text.replace(/[&<>"']/g, char => symbolReplacements[char])
+}
+
+// автоматическое увеличение textarea в зависимости от размера контента
+function autoResize(textarea) {
+  // Сбрасываем высоты
+  textarea.style.height = 'auto'
+  // Устанавливаем новую высоту на основе scrollHeight
+  textarea.style.height = textarea.scrollHeight + 'px'
 }
 
 // состояние приложения
@@ -55,14 +64,6 @@ function renderTasks() {
   statusBar.classList.remove('hidden')
 }
 
-// автоматическое увеличение textarea в зависимости от размера контента
-function autoResize(textarea) {
-  // Сбрасываем высоты
-  textarea.style.height = 'auto'
-  // Устанавливаем новую высоту на основе scrollHeight
-  textarea.style.height = textarea.scrollHeight + 'px'
-}
-
 const tasksContainer = document.querySelector('.main-content__tasks-container')
 const addTaskButton = document.querySelector('#add-task')
 const statusBar = document.querySelector('.page-header__status-bar')
@@ -87,8 +88,7 @@ addTaskButton.addEventListener('click', (event) => {
     setTimeout(() => {
       input.classList.remove('input-error')
     }, 700)
-    input.focus() // опиимизировать в функцию
-    input.value = ''
+
     return
   }
 
