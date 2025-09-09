@@ -91,6 +91,7 @@ addTaskButton.addEventListener('click', (event) => {
 
   if (inputData === '') {
     input.classList.add('input-error')
+    input.value = '' 
     setTimeout(() => {
       input.classList.remove('input-error')
     }, 700)
