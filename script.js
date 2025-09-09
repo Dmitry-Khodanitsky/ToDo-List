@@ -58,6 +58,11 @@ function createTask(content) {
 
 // функция рендера элементов
 function renderTasks() {
+  toogleUiState()
+  if (state.uiState === false) {
+    console.log('task list is empty')
+    return
+  }
   tasksContainer.innerHTML = ''
   state.tasks.forEach((task) => {
     tasksContainer.appendChild(createTask(task.content))
