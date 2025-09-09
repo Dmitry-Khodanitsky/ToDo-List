@@ -117,5 +117,7 @@ addTaskButton.addEventListener('click', (event) => {
 
     input.style.height = 'auto'
     renderTasks()
-  }
-})
+
+const toogleUiState = () => {
+  state.uiState = state.tasksCount ? true : false
+}
