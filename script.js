@@ -101,8 +101,8 @@ const deleteTask = (taskID) => {
   })
   renderTasks()
 }
+const addTask = () => {
   const inputData = input.value.trim()
-
   if (inputData === '') {
     input.classList.add('input-error')
     input.value = '' 
@@ -114,42 +114,22 @@ const deleteTask = (taskID) => {
   }
 
   const taskObject = {
-    id: Date.now() * Math.float(Math.random() * 10),
+    id: Date.now() * Math.floor(Math.random() * 10),
     content: sanitizeHTML(inputData),
     completed: false,
   }
-
   state.tasks.unshift(taskObject) // обновляем состояние
   state.tasksCount += 1
   state.countOfActive += 1
-
   input.value = '' // опиимизировать в функцию
 
-  if (inputData.length > 0) {
-    if (state.countOfActive === 0) {
-      [...tasksContainer.children].forEach((child) => {
-        child.classList.add('hidden')
-      })
-    }
-    const activeCountText = activeTasksLabel.querySelector(
-      '.page-header__text--active',
-    )
-    const doneCountText = doneTasksLabel.querySelector(
-      '.page-header__text--done',
-    )
+  // эта часть кода и ниже отвечает за рендер, нужно перенести
+  const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
+  const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
     activeCountText.textContent = `${state.countOfActive} активных`
     doneCountText.textContent = `${state.countOfDone} выполнено`
 
     input.style.height = 'auto'
-    renderTasks()
-
-const toogleUiState = () => {
-  state.uiState = state.tasksCount ? true : false
 }
-const deleteTask = (taskID) => {
-  state.tasksCount -= 1
-  state.tasks.filter((task) => {
-    task.id !== taskID
-  })
   renderTasks()
 }
