@@ -90,6 +90,13 @@ addTaskButton.addEventListener('click', (event) => {
   addTask()
   renderTasks()
 })
+const deleteTask = (taskID) => {
+  state.tasksCount -= 1
+  state.tasks.filter((task) => {
+    task.id !== taskID
+  })
+  renderTasks()
+}
   const inputData = input.value.trim()
 
   if (inputData === '') {
