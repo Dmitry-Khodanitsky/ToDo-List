@@ -87,6 +87,9 @@ input.addEventListener('input', () => {
 // клик по кнопке "Добавить"
 addTaskButton.addEventListener('click', (event) => {
   event.preventDefault()
+  addTask()
+  renderTasks()
+})
   const inputData = input.value.trim()
 
   if (inputData === '') {
