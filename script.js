@@ -99,7 +99,12 @@ addTaskButton.addEventListener('click', (event) => {
     return
   }
 
-  const taskObject = { id: state.tasksCount, content: sanitizeHTML(inputData) }
+  const taskObject = {
+    id: Date.now() * Math.float(Math.random() * 10),
+    content: sanitizeHTML(inputData),
+    completed: false,
+  }
+
   state.tasks.unshift(taskObject) // обновляем состояние
   state.tasksCount += 1
   state.countOfActive += 1
