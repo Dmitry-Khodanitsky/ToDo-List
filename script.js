@@ -61,6 +61,8 @@ function renderTasks() {
   toogleUiState()
   if (state.uiState === false) {
     console.log('task list is empty')
+    // обновить отображение активных и выполненных задач
+    // tasksContainer.innerHTML = ''
     return
   }
   tasksContainer.innerHTML = ''
@@ -90,6 +92,7 @@ addTaskButton.addEventListener('click', (event) => {
   addTask()
   renderTasks()
 })
+
 const toogleUiState = () => {
   state.uiState = state.tasksCount ? true : false
 }
@@ -101,11 +104,12 @@ const deleteTask = (taskID) => {
   })
   renderTasks()
 }
+
 const addTask = () => {
   const inputData = input.value.trim()
   if (inputData === '') {
     input.classList.add('input-error')
-    input.value = '' 
+    input.value = ''
     setTimeout(() => {
       input.classList.remove('input-error')
     }, 700)
@@ -126,10 +130,9 @@ const addTask = () => {
   // эта часть кода и ниже отвечает за рендер, нужно перенести
   const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
   const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
-    activeCountText.textContent = `${state.countOfActive} активных`
-    doneCountText.textContent = `${state.countOfDone} выполнено`
+  activeCountText.textContent = `${state.countOfActive} активных`
+  doneCountText.textContent = `${state.countOfDone} выполнено`
 
-    input.style.height = 'auto'
+  input.style.height = 'auto'
 }
-  renderTasks()
-}
+renderTasks()
