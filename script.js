@@ -93,7 +93,7 @@ function renderTasks() {
     return
   }
   state.tasks.forEach((task) => {
-    tasksContainer.appendChild(createTask(task.content))
+    tasksContainer.appendChild(createTask(task.content, task.id))
   })
   statusBar.classList.remove('hidden')
 }
