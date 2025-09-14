@@ -25,7 +25,6 @@ const state = {
   countOfActive: 0,
   countOfDone: 0,
   tasks: [],
-  uiState: false,
 }
 
 // Создание елемента с задачей
