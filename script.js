@@ -58,6 +58,30 @@ function createTask(content, taskID) {
   deleteButtonWrapper.addEventListener('click', () => deleteTask(taskID))
   return taskElement
 }
+// функция создания пустого контейнера с задачами иконка и текст/
+const createEmptyTaskList = () => {
+  const taskListItem = document.createElement('li')
+  taskListItem.classList.add('main-content__list-icon')
+
+  const taskListImg = document.createElement('img')
+  taskListImg.setAttribute('src', 'assets/icons/list.svg')
+  taskListImg.setAttribute('alt', 'У вас еще нет задач')
+
+  taskListItem.append(taskListImg)
+
+  const taskListTitle = document.createElement('li')
+  taskListTitle.classList.add('main-content__title')
+
+  const title = document.createElement('h3')
+  title.innerHTML = `Задач пока нет <br>Добавьте свою первую задачу!`
+
+  taskListTitle.append(title)
+
+  tasksContainer.innerHTML = ''
+  tasksContainer.append(taskListItem, taskListTitle)
+
+  return tasksContainer
+}
 
 // функция рендера элементов
 function renderTasks() {
