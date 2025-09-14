@@ -157,14 +157,7 @@ const addTask = () => {
   state.tasks.unshift(taskObject) // обновляем состояние
   state.tasksCount += 1
   state.countOfActive += 1
-  input.value = '' // опиимизировать в функцию
-
-  // эта часть кода и ниже отвечает за рендер, нужно перенести
-  const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
-  const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
-  activeCountText.textContent = `${state.countOfActive} активных`
-  doneCountText.textContent = `${state.countOfDone} выполнено`
-
+  input.value = ''
   input.style.height = 'auto'
 }
 renderTasks()
