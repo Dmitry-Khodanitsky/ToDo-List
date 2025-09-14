@@ -32,26 +32,29 @@ function createTask(content, taskID) {
   const taskElement = document.createElement('li')
   taskElement.classList.add('main-content__task-element')
 
-  const innerDiv = `
-            <div class="main-content__checkbox-wrapper">
-              <input
+  const checkboxWrapper = document.createElement('div')
+  checkboxWrapper.classList.add('main-content__checkbox-wrapper')
+
+  checkboxWrapper.innerHTML = `<input
                 type="checkbox"
                 name="done"
                 class="main-content__task-checkbox"
                 checked
-              />
-            </div>
-            <label for="done" class="main-content__task-label">
-            ${content}
-            </label>
-            <div class="main-content__delete-button-wrapper">
-              <button
-                aria-label="Удалить задачу"
-                class="main-content__task-delete-icon"
-              ></button>
-            </div>`
+              />`
 
-  taskElement.innerHTML = innerDiv
+  const label = document.createElement('label')
+  label.classList.add('main-content__task-label')
+  label.setAttribute('for', 'done')
+  label.setAttribute('task-id', `${taskID}`)
+  label.innerHTML = `${content}`
+
+  const deleteButtonWrapper = document.createElement('div')
+  deleteButtonWrapper.classList.add('main-content__delete-button-wrapper')
+  deleteButtonWrapper.innerHTML = `<button
+                aria-label="Удалить задачу"
+                class="main-content__task-delete-icon">
+                </button>`
+  taskElement.append(checkboxWrapper, label, deleteButtonWrapper)
   return taskElement
 }
 
