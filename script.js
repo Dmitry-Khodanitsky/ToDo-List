@@ -85,8 +85,7 @@ const createEmptyTaskList = () => {
 
 // функция рендера элементов
 function renderTasks() {
-  toogleUiState()
-  if (state.uiState === false) {
+  tasksContainer.innerHTML = ''
     console.log('task list is empty')
     // обновить отображение активных и выполненных задач
     // tasksContainer.innerHTML = ''
