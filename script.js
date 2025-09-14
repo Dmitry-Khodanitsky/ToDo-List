@@ -45,7 +45,7 @@ function createTask(content, taskID) {
   const label = document.createElement('label')
   label.classList.add('main-content__task-label')
   label.setAttribute('for', 'done')
-  label.setAttribute('task-id', `${taskID}`)
+  label.setAttribute('dat-task-id', `${taskID}`)
   label.innerHTML = `${content}`
 
   const deleteButtonWrapper = document.createElement('div')
