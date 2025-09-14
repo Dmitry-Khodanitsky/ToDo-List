@@ -28,7 +28,7 @@ const state = {
 }
 
 // Создание елемента с задачей
-function createTask(content) {
+function createTask(content, taskID) {
   const taskElement = document.createElement('li')
   taskElement.classList.add('main-content__task-element')
 
