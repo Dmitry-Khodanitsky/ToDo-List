@@ -123,10 +123,6 @@ addTaskButton.addEventListener('click', (event) => {
   renderTasks()
 })
 
-const toogleUiState = () => {
-  state.uiState = state.tasksCount ? true : false
-}
-
 const deleteTask = (taskID) => {
   const taskToDelete = state.tasks.find(task => task.id === taskID)
   state.tasksCount -= 1
