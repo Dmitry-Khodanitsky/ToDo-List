@@ -128,10 +128,12 @@ const toogleUiState = () => {
 }
 
 const deleteTask = (taskID) => {
+  const taskToDelete = state.tasks.find(task => task.id === taskID)
   state.tasksCount -= 1
-  state.tasks.filter((task) => {
-    task.id !== taskID
-  })
+  if (taskToDelete) {
+    taskToDelete.completed === true ? state.countOfDone -= 1 : state.countOfActive -= 1
+  }
+  state.tasks = state.tasks.filter(task => task.id !== taskID)
   renderTasks()
 }
 
