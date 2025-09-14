@@ -55,6 +55,7 @@ function createTask(content, taskID) {
                 class="main-content__task-delete-icon">
                 </button>`
   taskElement.append(checkboxWrapper, label, deleteButtonWrapper)
+  deleteButtonWrapper.addEventListener('click', () => deleteTask(taskID))
   return taskElement
 }
 
