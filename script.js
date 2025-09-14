@@ -86,12 +86,12 @@ const createEmptyTaskList = () => {
 // функция рендера элементов
 function renderTasks() {
   tasksContainer.innerHTML = ''
+  if (state.tasks.length === 0) {
     console.log('task list is empty')
-    // обновить отображение активных и выполненных задач
-    // tasksContainer.innerHTML = ''
+    createEmptyTaskList()
+    statusBar.classList.add('hidden')
     return
   }
-  tasksContainer.innerHTML = ''
   state.tasks.forEach((task) => {
     tasksContainer.appendChild(createTask(task.content))
   })
