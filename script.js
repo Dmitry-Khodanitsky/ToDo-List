@@ -34,6 +34,8 @@ const initialState = {
   countOfDone: 0,
   tasks: [],
 }
+// Загружаем состояние из LocalStorage или используем начальное
+let state = loadFromLocalStorage() || initialState
 
 // Создание елемента с задачей
 function createTask(content, taskID) {
