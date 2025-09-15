@@ -38,22 +38,29 @@ Open index.html in your browser
 
 Or just open the [demo](https://dmitry-khodanitsky.github.io/ToDo-List/)
 
-## 🎯  File Structure
-├── src/ - директория с JavaScript файлами:
-│   ├── app.js - точка входа, управляет инициализацией и обработчиками событий
-│   ├── state.js - управляет состоянием приложения и операциями с localStorage
-│   ├── tasks.js - содержит логику работы с задачами (CRUD операции, рендеринг)
-│   └── utils.js - вспомогательные функции для работы с DOM и санитизации
-├── public/
-│   ├── index.html - главный HTML файл с семантической разметкой и accessibility
-│   └── assets/ - директория для статических файлов
-│       └── icons/
-│           └── list.svg - SVG иконка для пустого списка задач
-├── styles/ - директория для CSS файлов
-│   └── main.css - стили с методологией BEM, Flexbox, Grid и адаптивным дизайном
-├── package.json
-├── .gitignore
-└── README.md
+
+## 🗂️ Directory Overview
+
+### 📂 src/
+**JavaScript source files:**
+- `app.js` - Main entry point, handles initialization and event listeners
+- `state.js` - Manages application state and localStorage operations
+- `tasks.js` - Contains task-related logic (CRUD operations, rendering)
+- `utils.js` - Utility functions for DOM manipulation and sanitization
+
+### 📂 public/
+**Static assets:**
+- `index.html` - Main HTML file with semantic markup and accessibility features
+- `assets/icons/` - Directory for static files and icons
+
+### 📂 styles/
+**Styling:**
+- `main.css` - Styles using BEM methodology, Flexbox, Grid, and responsive design
+
+### 📄 Root Files
+- `package.json` - Project configuration and dependencies
+- `.gitignore` - Git exclusion rules
+- `README.md` - Project documentation and instructions
 
 ## 🎯 Project Goals
 Practice vanilla JavaScript
