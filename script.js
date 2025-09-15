@@ -45,18 +45,27 @@ function createTask(content, taskID) {
   const checkboxWrapper = document.createElement('div')
   checkboxWrapper.classList.add('main-content__checkbox-wrapper')
 
-  checkboxWrapper.innerHTML = `<input
-                type="checkbox"
-                name="done"
-                class="main-content__task-checkbox"
-                checked
-              />`
+  const checkboxInput = document.createElement('input')
+  checkboxInput.setAttribute('type', 'checkbox')
+  checkboxInput.setAttribute('name', 'done')
+  checkboxInput.classList.add('main-content__task-checkbox')
+  checkboxWrapper.append(checkboxInput)
+
+  const currentTask = state.tasks.find(task => task.id === taskID)
+  if (currentTask) {
+    checkboxInput.checked = currentTask.completed
+  }
 
   const label = document.createElement('label')
   label.classList.add('main-content__task-label')
   label.setAttribute('for', 'done')
-  label.setAttribute('dat-task-id', `${taskID}`)
+  label.setAttribute('data-task-id', `${taskID}`)
   label.innerHTML = `${content}`
+
+  if (currentTask && currentTask.completed) {
+    label.style.textDecoration = 'line-through'
+    label.style.color = '#888'
+  }
 
   const deleteButtonWrapper = document.createElement('div')
   deleteButtonWrapper.classList.add('main-content__delete-button-wrapper')
@@ -66,6 +75,8 @@ function createTask(content, taskID) {
                 </button>`
   taskElement.append(checkboxWrapper, label, deleteButtonWrapper)
   deleteButtonWrapper.addEventListener('click', () => deleteTask(taskID))
+
+  checkboxInput.addEventListener('change', markAsDone)
   return taskElement
 }
 // функция создания пустого контейнера с задачами иконка и текст/
