@@ -103,6 +103,12 @@ const createEmptyTaskList = () => {
 
   return tasksContainer
 }
+const updateStatusBar = () => {
+  const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
+  const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
+  activeCountText.textContent = `${state.countOfActive} активных`
+  doneCountText.textContent = `${state.countOfDone} выполнено`
+}
 
 // функция рендера элементов
 function renderTasks() {
