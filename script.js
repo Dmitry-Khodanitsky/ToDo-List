@@ -28,12 +28,14 @@ const loadFromLocalStorage = () => {
   const savedState = localStorage.getItem('toDoAppState')
   return JSON.parse(savedState)
 }
+
 const initialState = {
   tasksCount: 0,
   countOfActive: 0,
   countOfDone: 0,
   tasks: [],
 }
+
 // Загружаем состояние из LocalStorage или используем начальное
 let state = loadFromLocalStorage() || initialState
 
@@ -103,6 +105,7 @@ const createEmptyTaskList = () => {
 
   return tasksContainer
 }
+
 const updateStatusBar = () => {
   const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
   const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
@@ -124,6 +127,7 @@ function renderTasks() {
   state.tasks.forEach((task) => {
     tasksContainer.appendChild(createTask(task.content, task.id))
   })
+
   statusBar.classList.remove('hidden')
   updateStatusBar()
 }
@@ -134,8 +138,6 @@ const statusBar = document.querySelector('.page-header__status-bar')
 const activeTasksLabel = document.querySelector('.page-header__item--active')
 const doneTasksLabel = document.querySelector('.page-header__item--done')
 const input = document.querySelector('#task-input')
-input.value = ''
-input.focus()
 
 // Событие textarea при вводе input
 input.addEventListener('input', () => {
@@ -149,26 +151,30 @@ addTaskButton.addEventListener('click', (event) => {
   renderTasks()
 })
 
+// контроллер удаления задчи
 const deleteTask = (taskID) => {
   const taskToDelete = state.tasks.find(task => task.id === taskID)
   state.tasksCount -= 1
   if (taskToDelete) {
-    taskToDelete.completed === true ? state.countOfDone -= 1 : state.countOfActive -= 1
+    taskToDelete.completed === true
+      ? (state.countOfDone -= 1)
+      : (state.countOfActive -= 1)
   }
   state.tasks = state.tasks.filter(task => task.id !== taskID)
   saveToLocalStorage()
   renderTasks()
 }
 
+// контроллер добавление задачи
 const addTask = () => {
   const inputData = input.value.trim()
+
+  // перенести в рендер
   if (inputData === '') {
     input.classList.add('input-error')
-    input.value = ''
     setTimeout(() => {
       input.classList.remove('input-error')
     }, 700)
-
     return
   }
 
@@ -180,8 +186,11 @@ const addTask = () => {
   state.tasks.unshift(taskObject) // обновляем состояние
   state.tasksCount += 1
   state.countOfActive += 1
-  input.value = ''
   input.style.height = 'auto'
+
+  saveToLocalStorage()
+}
+
 const markAsDone = (event) => {
   const checkbox = event.target
 
