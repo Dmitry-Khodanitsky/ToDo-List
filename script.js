@@ -156,6 +156,7 @@ const deleteTask = (taskID) => {
     taskToDelete.completed === true ? state.countOfDone -= 1 : state.countOfActive -= 1
   }
   state.tasks = state.tasks.filter(task => task.id !== taskID)
+  saveToLocalStorage()
   renderTasks()
 }
 
