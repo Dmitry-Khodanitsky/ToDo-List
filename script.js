@@ -20,7 +20,14 @@ function autoResize(textarea) {
 }
 
 // состояние приложения
-const state = {
+const saveToLocalStorage = () => {
+  localStorage.setItem('toDoAppState', JSON.stringify(state),
+  )
+}
+const loadFromLocalStorage = () => {
+  const savedState = localStorage.getItem('toDoAppState')
+  return JSON.parse(savedState)
+}
   tasksCount: 0,
   countOfActive: 0,
   countOfDone: 0,
