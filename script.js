@@ -28,6 +28,7 @@ const loadFromLocalStorage = () => {
   const savedState = localStorage.getItem('toDoAppState')
   return JSON.parse(savedState)
 }
+const initialState = {
   tasksCount: 0,
   countOfActive: 0,
   countOfDone: 0,
