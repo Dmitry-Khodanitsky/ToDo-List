@@ -123,10 +123,7 @@ function renderTasks() {
     tasksContainer.appendChild(createTask(task.content, task.id))
   })
   statusBar.classList.remove('hidden')
-  const activeCountText = activeTasksLabel.querySelector('.page-header__text--active')
-  const doneCountText = doneTasksLabel.querySelector('.page-header__text--done')
-  activeCountText.textContent = `${state.countOfActive} активных`
-  doneCountText.textContent = `${state.countOfDone} выполнено`
+  updateStatusBar()
 }
 
 const tasksContainer = document.querySelector('.main-content__tasks-container')
