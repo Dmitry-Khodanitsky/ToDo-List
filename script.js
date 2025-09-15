@@ -113,6 +113,8 @@ const updateStatusBar = () => {
 // функция рендера элементов
 function renderTasks() {
   tasksContainer.innerHTML = ''
+  input.value = ''
+  input.focus()
   if (state.tasks.length === 0) {
     console.log('task list is empty')
     createEmptyTaskList()
