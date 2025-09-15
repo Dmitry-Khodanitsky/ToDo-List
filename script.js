@@ -182,6 +182,36 @@ const addTask = () => {
   state.countOfActive += 1
   input.value = ''
   input.style.height = 'auto'
+const markAsDone = (event) => {
+  const checkbox = event.target
+
+  const taskElement = checkbox.closest('.main-content__task-element')
+  if (!taskElement) return
+
+  const label = taskElement.querySelector('.main-content__task-label')
+  if (!label) return
+
+  const taskId = Number(label.dataset.taskId)
+
+  state.tasks.forEach((task) => {
+    if (task.id === taskId) {
+      task.completed = !task.completed // Переключаем состояние
+
+      // подсчет количества задач
+      state.countOfActive = state.tasks.filter(task => !task.completed).length
+      state.countOfDone = state.tasks.filter(task => task.completed).length
+    }
+  })
+  if (checkbox.checked) {
+    label.style.textDecoration = 'line-through'
+    label.style.color = '#888'
+  }
+  else {
+    label.style.textDecoration = 'none'
+    label.style.color = ''
+  }
+
+  updateStatusBar()
   saveToLocalStorage()
 }
 renderTasks()
