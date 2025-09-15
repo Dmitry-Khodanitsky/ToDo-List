@@ -181,5 +181,6 @@ const addTask = () => {
   state.countOfActive += 1
   input.value = ''
   input.style.height = 'auto'
+  saveToLocalStorage()
 }
 renderTasks()
