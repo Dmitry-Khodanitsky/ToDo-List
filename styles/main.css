@@ -188,6 +188,9 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 }
+.checked {
+  text-decoration: line-through; color: rgb(136, 136, 136);
+}
 
 .main-content__task-label {
   width: 90%;
