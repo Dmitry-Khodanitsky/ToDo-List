@@ -188,6 +188,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .checked {
   text-decoration: line-through; color: rgb(136, 136, 136);
 }
@@ -217,6 +218,7 @@ button {
 .main-content__delete-button-wrapper:hover {
   transform: scale(0.90);
 }
+
 
 
 .main-content__delete-button-wrapper:active {
