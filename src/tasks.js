@@ -49,7 +49,7 @@ export const createEmptyTaskList = () => {
   taskListItem.classList.add('main-content__list-icon')
 
   const taskListImg = document.createElement('img')
-  taskListImg.setAttribute('src', 'assets/icons/list.svg')
+  taskListImg.setAttribute('src', 'public/assets/icons/list.svg')
   taskListImg.setAttribute('alt', 'У вас еще нет задач')
 
   taskListItem.append(taskListImg)
