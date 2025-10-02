@@ -5,6 +5,8 @@ A simple and elegant task manager built with vanilla JavaScript, HTML, and CSS. 
 
 ⚠️ **Project in active development functionality may change, bugs are possible**
 
+## [Start project](https://dmitry-khodanitsky.github.io/ToDo-List/)
+
 ## ✨ Features
 ✅ Add and delete tasks
 
